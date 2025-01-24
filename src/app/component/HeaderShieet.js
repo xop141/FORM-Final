@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from "../../../public/logo.svg";
+import Logo from "../../../public/lovgit add .go.svg";
 import Image from 'next/image'
 let test = "213"
 
