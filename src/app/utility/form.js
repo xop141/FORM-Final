@@ -130,8 +130,6 @@ if (step === 3) {
       );
     case 4:
       return <Success />;
-    default:
-      return null;
   }
 };
 
