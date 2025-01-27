@@ -134,4 +134,4 @@ if (step === 3) {
   }
 };
 
-export default MultiStepForm;s
+export default MultiStepForm;
