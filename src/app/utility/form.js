@@ -58,7 +58,7 @@ const MultiStepForm = () => {
       
     }
 if (step === 3) {
-  if (!formData.date.trim()) {
+  if (!formData.date.trim() || 2025-formData.date.slice(0,4)<18) {
     newErrors.date = 'Please select a date.';
   }
   if (!formData.profile.trim()) {
