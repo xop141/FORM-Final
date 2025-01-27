@@ -43,20 +43,11 @@ const MultiStepForm = () => {
 
     if (step === 2) {
       if (!formData.email.trim()) newErrors.email = 'Мэйл хаягаа оруулна уу';
-      if (!formData.email.endsWith('@gmail.com') || regex.test(formData.email[0]))
-        newErrors.email = 'Please provide a valid email address.'; 
-      if (formData.phone.length!==8  || !regex2.test(formData.phone)) 
-         newErrors.phone = 'Утасны дугаараа оруулна уу.';
-  
-
+      if (!formData.email.endsWith('@gmail.com') || regex.test(formData.email[0])) newErrors.email = 'Please provide a valid email address.'; 
+      if (formData.phone.length!==8  || !regex2.test(formData.phone)) newErrors.phone = 'Утасны дугаараа оруулна уу.';
       if (!formData.password.trim()) newErrors.password = 'Нууц үгээ оруулна уу';
-      if (formData.password.length < 6)
-        newErrors.password = '6 оронтой тоо оруулна уу';
-      if (formData.password !== formData.password2)
-        newErrors.password2 = 'Нууц үгээ давтаж оруулна уу';
-     
-        
-      
+      if (formData.password.length < 6) newErrors.password = '6 оронтой тоо оруулна уу';
+      if (formData.password !== formData.password2) newErrors.password2 = 'Нууц үгээ давтаж оруулна уу';
     }
 if (step === 3) {
   if (!formData.date.trim()|| 2025-formData.date.slice(0,4)<18) {
