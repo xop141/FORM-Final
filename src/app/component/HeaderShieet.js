@@ -1,7 +1,7 @@
 import React from 'react'
-import Logo from "../../../public/lovgit add .go.svg";
+import Logo from "../component/logo.svg";
 import Image from 'next/image'
-let test = "213"
+
 
 const HeaderShieet = () => {
   return (

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import HeaderShieet from './HeaderShieet';
-import {motion} from "framer-motion";
+import { motion } from "motion/react"
 const Step1 = ({ nextStep, handleChange, values, errors, step }) => {
   return (
     <div className='w-[480px] h-[655px] bg-white p-[32px] rounded-[8px]'>

@@ -1,8 +1,16 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import HeaderShieet from './HeaderShieet';
-import {motion} from "framer-motion";
+import { motion } from "motion/react" 
+import Image from 'next/image'
+import eye from "../component/eyeShow.svg";
+import eyehide from "../component/eyeHide.svg";
+
 const Page2 = ({ prevStep, nextStep, handleChange, values, errors, step }) => {
+  const [show, setShow] = useState(false)
+  const pswdShow = () => {
+    setShow((prev) => !prev); 
+  };
   return (
     <motion.div
     initial={{opacity: 0, x: 300}}
@@ -23,7 +31,7 @@ const Page2 = ({ prevStep, nextStep, handleChange, values, errors, step }) => {
               Email:
             </label>
             <input
-              type="email"
+              type="text"
               name="email"
               value={values.email}
               onChange={handleChange}
@@ -48,28 +56,38 @@ const Page2 = ({ prevStep, nextStep, handleChange, values, errors, step }) => {
               <span className="text-red-500 text-sm">{errors.phone}</span>
             )}
           </div>
-          {/* Password Field */}
+        
           <div className="flex flex-col h-fit gap-[8px] justify-between">
             <label htmlFor="password" className="text-sm font-medium">
               Password:
             </label>
+            
+
+            </div>
+            
+            <div className='flex items-center justify-between'>
             <input
-              type="password"
+              type={show ? "text" : "password"}
               name="password"
               value={values.password}
               onChange={handleChange}
-              className={`h-[44px] rounded-[8px] border ${errors.password ? 'border-red-500' : 'border-gray-300'}`}
+              className={`w-[90%] h-[44px] rounded-[8px] border ${errors.password ? 'border-red-500' : 'border-gray-300'}`}
             />
-            {errors.password && (
+            <div  onClick={pswdShow} >
+              <Image src={show ? eye : eyehide} alt='icon' width={30} height={30} />
+              </div>
+            
+          
+          </div>
+          {errors.password && (
               <span className="text-red-500 text-sm">{errors.password}</span>
             )}
-          </div>
           <div className="flex flex-col h-fit justify-between gap-[8px]">
             <label htmlFor="password2" className="text-sm font-medium">
               Repeat Password:
             </label>
             <input
-              type="password"
+              type={show ? "text" : "password"}
               name="password2"
               value={values.password2}
               onChange={handleChange}
