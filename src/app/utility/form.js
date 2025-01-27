@@ -14,6 +14,7 @@ import { stringify } from 'postcss';
 
 const MultiStepForm = () => {
     const regex = /[!@#$%^&*()\-+={}[\]:;"'<>,.?\/|\\]/;
+    const regex2 = /^\d+$/
    
 
   const [step, setStep] = useState(1);
@@ -43,8 +44,8 @@ const MultiStepForm = () => {
     if (step === 2) {
       if (!formData.email.trim()) newErrors.email = 'Мэйл хаягаа оруулна уу';
       if (!formData.email.endsWith('@gmail.com') || regex.test(formData.email[0]))
-        newErrors.email = 'Please provide a valid email address.';
-       if (formData.phone.length!==8   || !regex2.test(formData.phone)) 
+        newErrors.email = 'Please provide a valid email address.'; 
+      if (formData.phone.length!==8  || !regex2.test(formData.phone)) 
          newErrors.phone = 'Утасны дугаараа оруулна уу.';
   
 
@@ -58,7 +59,7 @@ const MultiStepForm = () => {
       
     }
 if (step === 3) {
-  if (!formData.date.trim() || 2025-formData.date.slice(0,4)<18) {
+  if (!formData.date.trim()|| 2025-formData.date.slice(0,4)<18) {
     newErrors.date = 'Please select a date.';
   }
   if (!formData.profile.trim()) {
@@ -133,4 +134,4 @@ if (step === 3) {
   }
 };
 
-export default MultiStepForm;
+export default MultiStepForm;s
