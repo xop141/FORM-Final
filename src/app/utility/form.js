@@ -44,7 +44,7 @@ const MultiStepForm = () => {
       if (!formData.email.trim()) newErrors.email = 'Мэйл хаягаа оруулна уу';
       if (!formData.email.endsWith('@gmail.com') || regex.test(formData.email[0]))
         newErrors.email = 'Please provide a valid email address.';
-       if (!formData.phone.trim()  || !regex2.test(formData.phone)) 
+       if (formData.phone.length<8   || !regex2.test(formData.phone)) 
          newErrors.phone = 'Утасны дугаараа оруулна уу.';
   
 
