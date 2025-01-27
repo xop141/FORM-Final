@@ -50,8 +50,9 @@ const MultiStepForm = () => {
       if (formData.password !== formData.password2) newErrors.password2 = 'Нууц үгээ давтаж оруулна уу';
     }
 if (step === 3) {
-  if (!formData.date.trim()|| 2025-formData.date.slice(0,4)<18) {
-    newErrors.date = 'Please select a date.';
+   if ((2025-formData.date.slice(0,4))<18) {
+    let age = 18-(2025-formData.date.slice(0,4))
+    newErrors.date2 = age + " " + 'jiliin daraa ireerei';
   }
   if (!formData.profile.trim()) {
     newErrors.profile = 'select img'
