@@ -44,6 +44,9 @@ const Step3 = ({ nextStep, prevStep, handleChange, values,step, errors }) => {
       {errors.date && (
               <span className="text-red-500 text-sm">{errors.date}</span>
             )}
+  {errors.date2 && (
+              <span className="text-red-500 text-sm">{errors.date2}</span>
+            )}
      </div>
      <input type='file'
     id='fileInput'
